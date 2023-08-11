@@ -1,68 +1,112 @@
-import useLocalStorage from './components/basic hooks/useLocalStorage';
+import React from 'react';
+import StateForm from './components/Forms/stateForm';
+import RefForm from './components/Forms/refForm';
+import ReactHookForm from './components/Forms/ReactHookForm';
 
-function App() {
-  const [firstName, setFirstName] = useLocalStorage('FIRST_NAME', '');
-
-  // Bonus:
-  const [lastName, setLastName] = useLocalStorage('LAST_NAME', () => {
-    return 'Default';
-  });
-
-  // // Bonus:
-  const [hobbies, setHobbies] = useLocalStorage('HOBBIES', [
-    'Programming',
-    'Weight Lifting',
-  ]);
-
+const App = () => {
   return (
-    <>
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'flex-start',
-          marginBottom: '1rem',
-        }}
-      >
-        <label>First Name</label>
-        <input
-          type="text"
-          value={firstName}
-          onChange={(e) => setFirstName(e.target.value)}
-        />
-      </div>
-
-      {/* Bonus: */}
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'flex-start',
-          marginBottom: '1rem',
-        }}
-      >
-        <label>Last Name</label>
-        <input
-          type="text"
-          value={lastName}
-          onChange={(e) => setLastName(e.target.value)}
-        />
-      </div>
-
-      {/* Bonus: */}
-      <div>{hobbies.join(', ')}</div>
-      <button
-        onClick={() =>
-          setHobbies((currentHobbies) => [...currentHobbies, 'New Hobby'])
-        }
-      >
-        Add Hobby
-      </button>
-    </>
+    <div>
+      <ReactHookForm />
+    </div>
   );
-}
+};
 
 export default App;
+
+// import React, { useRef, useState } from 'react';
+
+// const App = () => {
+//   const [name, setName] = useState('');
+//   const nameRef = useRef(null);
+//   const handleClick = (e) => {
+//     e.preventDefault();
+//     if (nameRef.current !== null) {
+//       console.log(nameRef.current.value);
+//     }
+//   };
+
+//   // console.log(nameRef);
+//   // console.log('rendring');
+//   return (
+//     <form onSubmit={handleClick}>
+//       <label>Name</label>
+//       <input
+//         ref={nameRef}
+//         type="text"
+//         onChange={(e) => setName(e.target.value)}
+//       />
+//       <button>alert</button>
+//     </form>
+//   );
+// };
+
+// export default App;
+
+// import useLocalStorage from './components/basic hooks/useLocalStorage';
+
+// function App() {
+//   const [firstName, setFirstName] = useLocalStorage('FIRST_NAME', '');
+
+//   // Bonus:
+//   const [lastName, setLastName] = useLocalStorage('LAST_NAME', () => {
+//     return 'Default';
+//   });
+
+//   // // Bonus:
+//   const [hobbies, setHobbies] = useLocalStorage('HOBBIES', [
+//     'Programming',
+//     'Weight Lifting',
+//   ]);
+
+//   return (
+//     <>
+//       <div
+//         style={{
+//           display: 'flex',
+//           flexDirection: 'column',
+//           alignItems: 'flex-start',
+//           marginBottom: '1rem',
+//         }}
+//       >
+//         <label>First Name</label>
+//         <input
+//           type="text"
+//           value={firstName}
+//           onChange={(e) => setFirstName(e.target.value)}
+//         />
+//       </div>
+
+//       {/* Bonus: */}
+//       <div
+//         style={{
+//           display: 'flex',
+//           flexDirection: 'column',
+//           alignItems: 'flex-start',
+//           marginBottom: '1rem',
+//         }}
+//       >
+//         <label>Last Name</label>
+//         <input
+//           type="text"
+//           value={lastName}
+//           onChange={(e) => setLastName(e.target.value)}
+//         />
+//       </div>
+
+//       {/* Bonus: */}
+//       <div>{hobbies.join(', ')}</div>
+//       <button
+//         onClick={() =>
+//           setHobbies((currentHobbies) => [...currentHobbies, 'New Hobby'])
+//         }
+//       >
+//         Add Hobby
+//       </button>
+//     </>
+//   );
+// }
+
+// export default App;
 
 // import React, { useCallback, useEffect, useState } from 'react';
 
