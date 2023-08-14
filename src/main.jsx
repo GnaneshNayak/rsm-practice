@@ -1,12 +1,15 @@
 import { StrictMode } from 'react';
 import ReactDOM from 'react-dom/client';
 // import App from './components/AdavanceStatefulComponents/App';
-import App from './components/AdavncedComponent/App';
-// import App from './App.jsx';
-import './index.css';
-console.log('main');
+// import App from './components/AdavncedComponent/App';
+import App from './App.jsx';
+import './components/RouterProject/styles.css';
+import { RouterProvider } from 'react-router-dom';
+import { router } from './components/RouterProject/router.jsx';
+// import { router } from './router.jsx';
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </StrictMode>,
 );

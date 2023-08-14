@@ -6,6 +6,48 @@ const App = () => {
 
 export default App;
 
+// import Home from './components/Router/Home';
+// import About from './components/Router/About';
+// import Store from './components/Router/Store';
+
+// const App = () => {
+//   const url = window.location.pathname;
+//   console.log(url);
+
+//   let component;
+
+//   if (url === '/') {
+//     component = <Home />;
+//   }
+//   if (url === '/about') {
+//     component = <About />;
+//   }
+//   if (url === '/store') {
+//     component = <Store />;
+//   }
+//   return (
+//     <div>
+//       <nav>
+//         <ul>
+//           <li>
+//             <a href="/">Home</a>
+//           </li>
+//           <li>
+//             <a href="/about">about</a>
+//           </li>
+//           <li>
+//             <a href="/store">store</a>
+//           </li>
+//         </ul>
+//       </nav>
+
+//       {component}
+//     </div>
+//   );
+// };
+
+// export default App;
+
 // import { useState } from 'react';
 // import useFetch from './components/basic hooks/useFetch';
 
